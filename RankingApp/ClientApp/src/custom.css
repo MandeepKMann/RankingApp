@@ -16,14 +16,49 @@ code {
 .itemsNotRanked {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .unrankedCell {
-    width: 100px;
-    height: 150px;
+    height: 100px;
     display: flex;
+    flex-direction: row;
 }
 
-unrankedCell img {
-    width: 100%;
+.rankings {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-self: center;
+    margin-bottom: 15px
+}
+
+.rankRow {
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+.sTier {
+    background-color: rgb(255, 127, 127);
+}
+
+.aTier {
+    background-color: rgb(255, 191, 127);
+}
+
+.bTier {
+    background-color: rgb(255, 223, 127);
+}
+
+.cTier {
+    background-color: rgb(255, 255, 127);
+}
+
+.dTier {
+    background-color: rgb(191, 255, 127);
 }

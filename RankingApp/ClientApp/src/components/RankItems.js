@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import FamousRaccoonImageArray from './FamousRaccoonImages.js';
+import RankingGrid from './RankingGrid.js';
 
 const RankItems = () => {
 
@@ -18,6 +19,9 @@ const RankItems = () => {
 
     return (
         <main>
+
+            <RankingGrid items={items} FamousRaccoonImageArray={FamousRaccoonImageArray} />
+
             <div className = "itemsNotRanked">
                 {
                     (items.length > 0) ? items.map((item) =>
