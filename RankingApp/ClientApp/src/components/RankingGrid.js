@@ -1,7 +1,7 @@
 ﻿
 
 
-const RankingGrid = ({ items, FamousRaccoonImageArray }) => {
+const RankingGrid = ({ items, FamousRaccoonImageArray, drag, allowDrop, drop }) => {
 
     const rankingGrid = [];
     const cellCollectionS = [];
@@ -14,11 +14,15 @@ const RankingGrid = ({ items, FamousRaccoonImageArray }) => {
         if (rankNum > 0) {
             //for ranking purposes (has an id which equals the ranking value)
             let item = items.find(o => o.ranking === rankNum);
-            cellCollection.push(<div id={`rank-${rankNum}`} classname="rankCell"></div>);
+            cellCollection.push(
+            <div id={`rank-${rankNum}`} onDrop={drop} onDragOver={allowDrop} className="rankCell">
+                {(item != null) ? <img id={`item-${item.id}`} src={FamousRaccoonImageArray.find(o => o.id === item.imageId)?.image} draggable = "true" onDragStart={drag} /> 
+                                : null}
+            </div>);
         }
         else {
             //first cell is for labeling purposes
-            cellCollection.push(<div classname="rowLabel">
+            cellCollection.push(<div className="rowLabel">
                 <h4>{rowLabel}</h4>
             </div>);
 
@@ -88,7 +92,7 @@ const RankingGrid = ({ items, FamousRaccoonImageArray }) => {
 
     return (
 
-        <div classname="rankings">
+        <div className="rankings">
             {createRankingGrid()}
         </div>
 

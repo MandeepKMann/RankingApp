@@ -13,6 +13,12 @@ code {
   border-color: #1861ac;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .itemsNotRanked {
     display: flex;
     justify-content: space-evenly;
@@ -21,7 +27,8 @@ code {
 }
 
 .unrankedCell {
-    height: 100px;
+    height: 150px;
+    width: 100px;
     display: flex;
     flex-direction: row;
 }
@@ -61,4 +68,11 @@ code {
 
 .dTier {
     background-color: rgb(191, 255, 127);
+}
+
+.rankCell, .rowLabel {
+    width: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
