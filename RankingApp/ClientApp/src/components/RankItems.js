@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import FamousRaccoonImageArray from './FamousRaccoonImages.js';
 import RankingGrid from './RankingGrid.js';
+import ItemCollection from './ItemCollection.js';
 
 const RankItems = () => {
 
@@ -50,29 +51,18 @@ const RankItems = () => {
 
                 <RankingGrid
                     items={items}
-                    FamousRaccoonImageArray={FamousRaccoonImageArray}
+                    imgArr={FamousRaccoonImageArray}
                     drag={drag}
                     allowDrop={allowDrop}
                     drop={drop}
                 />
+                <ItemCollection
+                    items={items}
+                    imgArr={FamousRaccoonImageArray}
+                    drag={drag}
+                />
 
-                <div className="itemsNotRanked">
-                    {
-                        (items.length > 0) ? items.map((item) =>
-                            <div key={item.id} className="unrankedCell">
-                                <img
-                                    id={`item-${item.id}`}
-                                    src={FamousRaccoonImageArray.find(o => o.id === item.imageId)?.image}
-                                    style={{ cursor: "pointer" }}
-                                    draggable="true"
-                                    onDragStart={drag}
-                                />
 
-                            </div>
-
-                        ) : <div>Loading...</div>
-                    }
-                </div>
             </main>
         )
 }

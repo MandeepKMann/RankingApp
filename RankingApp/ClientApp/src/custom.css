@@ -33,6 +33,11 @@ main {
     flex-direction: row;
 }
 
+.unrankedCell img, .rankCell img {
+    width: 100%;
+    height: 100%;
+}
+
 .rankings {
     width: 800px;
     display: flex;
