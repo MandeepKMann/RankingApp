@@ -1,12 +1,14 @@
 ﻿import React, { useState, useEffect } from 'react';
-import FamousRaccoonImageArray from './FamousRaccoonImages.js';
 import RankingGrid from './RankingGrid.js';
 import ItemCollection from './ItemCollection.js';
 
-const RankItems = () => {
+const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
-    const [items, setItems] = useState([]);
-    const dataType = 1;
+    const [reload, setReload] = useState(false);
+
+    const Reload = () => {
+        setReload(true);
+    }
 
     //stores the id value of the item that is being dragged
     const drag = (ev) => {
@@ -36,34 +38,56 @@ const RankItems = () => {
             setItems(transformedCollection);
         }
     }
-        useEffect(() => {
-            fetch(`item/${dataType}`)
-                .then((res) => {
-                    return res.json();
-                })
-                .then(data => {
-                    setItems(data);
-                })
-        }, [])
 
-        return (
+    const getDataFromApi = () => {
+        fetch(`item/${dataType}`)
+            .then((res) => {
+                return res.json();
+            })
+            .then(data => {
+                setItems(data);
+            })
+    }
+
+    useEffect(() => {
+        if (items == null) {
+            getDataFromApi();
+        }
+    }, [dataType])
+
+
+    useEffect(() => {
+        if (items != null) {
+            localStorage.setItem(localStorageKey, JSON.stringify(items));
+        }
+    }, [items])
+
+    useEffect(() => {
+        if (reload === true) {
+            getDataFromApi();
+        }
+    }, [reload])
+
+    return (
+
+        (items != null)?
             <main>
 
                 <RankingGrid
                     items={items}
-                    imgArr={FamousRaccoonImageArray}
+                    imgArr={imgArr}
                     drag={drag}
                     allowDrop={allowDrop}
                     drop={drop}
                 />
                 <ItemCollection
                     items={items}
-                    imgArr={FamousRaccoonImageArray}
+                    imgArr={imgArr}
                     drag={drag}
                 />
-
-
+                <button onClick={Reload} className="reload" style={{"marginTop": "10px"}}> <span className="text">Reload</span></button>
             </main>
+            :<main>Loading...</main>
         )
 }
 

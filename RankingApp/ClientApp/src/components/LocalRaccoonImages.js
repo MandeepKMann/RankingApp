@@ -1,6 +1,6 @@
 ﻿import Cheeto from '../images/localRaccoons/Cheeto.jpg';
 import Evil from '../images/localRaccoons/Evil.jpg';
-import Loaf from '../images/localRaccoons/Loaf.pjeg';
+import Loaf from '../images/localRaccoons/Loaf.jpeg';
 import Pizza from '../images/localRaccoons/Pizza.jpg';
 import RockingHorse from '../images/localRaccoons/RockingHorse.jpg';
 import Sleepy from '../images/localRaccoons/Sleepy.jpg';
