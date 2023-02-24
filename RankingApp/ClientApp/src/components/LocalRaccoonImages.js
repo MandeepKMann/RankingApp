@@ -1,25 +1,25 @@
-﻿import DeadRaccoonTO from '../images/localRaccoons/Cheeto.jpg';
-import HowardLotor from '../images/localRaccoons/Evil.jpg';
-import JacksonTheRaccoon from '../images/localRaccoons/Loaf.pjeg';
-import Meeko from '../images/localRaccoons/Pizza.jpg';
-import MrPorter from '../images/localRaccoons/RockingHorse.jpg';
-import Raccacoonie from '../images/localRaccoons/Sleepy.jpg';
-import RJ from '../images/localRaccoons/Smiling.jpg';
-import RocketRaccoon from '../images/localRaccoons/Standing.jpg';
-import SlyCooper from '../images/localRaccoons/Strong.jpg';
-import TomNook from '../images/localRaccoons/Teddy.jpg';
+﻿import Cheeto from '../images/localRaccoons/Cheeto.jpg';
+import Evil from '../images/localRaccoons/Evil.jpg';
+import Loaf from '../images/localRaccoons/Loaf.pjeg';
+import Pizza from '../images/localRaccoons/Pizza.jpg';
+import RockingHorse from '../images/localRaccoons/RockingHorse.jpg';
+import Sleepy from '../images/localRaccoons/Sleepy.jpg';
+import Smiling from '../images/localRaccoons/Smiling.jpg';
+import Standing from '../images/localRaccoons/Standing.jpg';
+import Strong from '../images/localRaccoons/Strong.jpg';
+import Teddy from '../images/localRaccoons/Teddy.jpg';
 
 const LocalRaccoonImageArray = [
-    { id: 1, image: Cheeto },
-    { id: 2, image: Evil },
-    { id: 3, image: Loaf },
-    { id: 4, image: Pizza },
-    { id: 5, image: RockingHorse },
-    { id: 6, image: Sleepy },
-    { id: 7, image: Smiling },
-    { id: 8, image: Standing },
-    { id: 9, image: Strong },
-    { id: 10, image: Teddy }
+    { id: 11, image: Cheeto },
+    { id: 12, image: Evil },
+    { id: 13, image: Loaf },
+    { id: 14, image: Pizza },
+    { id: 15, image: RockingHorse },
+    { id: 16, image: Sleepy },
+    { id: 17, image: Smiling },
+    { id: 18, image: Standing },
+    { id: 19, image: Strong },
+    { id: 20, image: Teddy }
 ]
 
 export default LocalRaccoonImageArray;
