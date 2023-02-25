@@ -22,7 +22,7 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
     const drop = (ev) => {
         ev.preventDefault();
-        //targetElm is the element in the ranking grid which the use chooses to drop the item
+        //targetElm is the element in the ranking grid which the user chooses to drop the item
         const targetElm = ev.target;
         if (targetElm.nodeName === "IMG") {
             //if an image element already exists as a child element where the user it attempting to drop the image, it will return false
@@ -33,12 +33,14 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
             let data = parseInt(ev.dataTransfer.getData("text").substring(5));
             //changes the ranking item of the selected item
             const transformedCollection = items.map((item) => (item.id === parseInt(data)) ?
-                { ...item, ranking: parseInt(targetElm.id.substring(5)) } : { ...item, ranking: item.ranking });
+                { ...item, ranking: parseInt(targetElm.id.substring(5)) }
+                : { ...item, ranking: item.ranking });
             //sets the state of the items array and rerenders the component
             setItems(transformedCollection);
         }
     }
 
+    //API call
     const getDataFromApi = () => {
         fetch(`item/${dataType}`)
             .then((res) => {
@@ -49,19 +51,23 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
             })
     }
 
+    //ONLY call the API if the items collection is null
     useEffect(() => {
         if (items == null) {
             getDataFromApi();
         }
     }, [dataType])
 
-
+    //Save the state of the of the relevent collection to local storage every time the relevent item's state changes
     useEffect(() => {
         if (items != null) {
             localStorage.setItem(localStorageKey, JSON.stringify(items));
         }
+        //set reload to false when the state of the item's collection changes
+        setReload(false);
     }, [items])
 
+    //If user clicks reload button, a call is made to the API and refreshes the rankings of the items
     useEffect(() => {
         if (reload === true) {
             getDataFromApi();
@@ -72,7 +78,6 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
         (items != null)?
             <main>
-
                 <RankingGrid
                     items={items}
                     imgArr={imgArr}
@@ -80,14 +85,16 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
                     allowDrop={allowDrop}
                     drop={drop}
                 />
+                <button onClick={Reload} className="reload">Reset</button>
                 <ItemCollection
                     items={items}
                     imgArr={imgArr}
                     drag={drag}
                 />
-                <button onClick={Reload} className="reload" style={{"marginTop": "10px"}}> <span className="text">Reload</span></button>
             </main>
-            :<main>Loading...</main>
+            : <main>
+                <p>Loading...</p>
+              </main>
         )
 }
 
