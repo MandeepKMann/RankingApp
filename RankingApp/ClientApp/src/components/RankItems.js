@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import RankingGrid from './RankingGrid.js';
 import ItemCollection from './ItemCollection.js';
+import { Container } from 'reactstrap';
 
 const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
@@ -77,24 +78,28 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
     return (
 
         (items != null)?
-            <main>
-                <RankingGrid
-                    items={items}
-                    imgArr={imgArr}
-                    drag={drag}
-                    allowDrop={allowDrop}
-                    drop={drop}
-                />
-                <button onClick={Reload} className="reload">Reset</button>
-                <ItemCollection
-                    items={items}
-                    imgArr={imgArr}
-                    drag={drag}
-                />
-            </main>
-            : <main>
-                <p>Loading...</p>
-              </main>
+            <section>
+                <Container className="flexContainer">
+                    <RankingGrid
+                        items={items}
+                        imgArr={imgArr}
+                        drag={drag}
+                        allowDrop={allowDrop}
+                        drop={drop}
+                    />
+                    <button onClick={Reload} className="reload">Reset</button>
+                    <ItemCollection
+                        items={items}
+                        imgArr={imgArr}
+                        drag={drag}
+                    />
+                </Container>
+            </section>
+            : <section>
+                <Container>
+                    <p>Loading...</p>
+                </Container>
+              </section>
         )
 }
 

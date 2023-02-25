@@ -6,6 +6,7 @@ const ItemCollection = ({items, drag, imgArr}) => {
             {
                 items.map((item) => (item.ranking === 0)
                     ? <Item
+                        key={item.id}
                         item={item}
                         drag={drag}
                         itemImgObj={imgArr.find(o => o.id === item.imageId)}
