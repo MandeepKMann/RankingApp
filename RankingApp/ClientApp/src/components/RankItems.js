@@ -2,6 +2,7 @@
 import RankingGrid from './RankingGrid.js';
 import ItemCollection from './ItemCollection.js';
 import { Container } from 'reactstrap';
+import Swal from 'sweetalert2'
 
 const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
@@ -75,6 +76,14 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
         }
     }, [reset])
 
+    const InstructionsAlert = () => {
+
+        Swal.fire({
+            title: 'Instructions',
+            html: "1) Select either the Famous or Local Raccoons <br/> 2) Drag and drop the images of the Raccoons into the tiered rows <br/> 3) Each tier can only accept 4 images <br/> 4) Rankings can only be undone by resetting everything by clicking the Reset button"
+        })
+    }
+
     return (
 
         (items != null)?
@@ -87,7 +96,10 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
                         allowDrop={allowDrop}
                         drop={drop}
                     />
-                    <button onClick={Reset} className="reset">Reset</button>
+                    <div className="buttons">
+                        <button onClick={InstructionsAlert}>Instructions</button>
+                        <button onClick={Reset} className="reset">Reset</button>
+                    </div>
                     <ItemCollection
                         items={items}
                         imgArr={imgArr}
