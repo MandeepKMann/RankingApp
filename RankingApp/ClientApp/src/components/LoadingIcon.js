@@ -1,4 +1,4 @@
-import loadingIcon from '../images/loadingIcon.png';
+import loadingIcon from '../images/raccoonIcon.png';
 
 const LoadingIcon = () => {
     return (
