@@ -29,22 +29,47 @@ section {
     padding-bottom: 10px;
 }
 
-.homePage {
+.homeTextContainer,
+.devNotesTextContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: navajowhite;
-    border-radius: 7px;
+    background-color: #FCF7EB;
+    border: 2px solid black;
     width: fit-content;
     padding: 2%;
 }
 
-.homeSection {
+.homeSection,
+.devNotesSection {
     background: url(./images/homePage.jpg);
     background-repeat: repeat;
 }
 
-.flexContainer {
+.homeFlex,
+.devNotesFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 10px;
+    color: black;
+    background-color: #FEFCF1;
+}
+
+
+.flexContainerRank {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,4 +138,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.reset {
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 10px;
+    color: black;
+    background-color: #FEFCF1;
 }

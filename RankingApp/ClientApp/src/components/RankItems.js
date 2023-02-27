@@ -5,10 +5,10 @@ import { Container } from 'reactstrap';
 
 const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
-    const [reload, setReload] = useState(false);
+    const [reset, setReset] = useState(false);
 
-    const Reload = () => {
-        setReload(true);
+    const Reset = () => {
+        setReset(true);
     }
 
     //stores the id value of the item that is being dragged
@@ -64,22 +64,22 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
         if (items != null) {
             localStorage.setItem(localStorageKey, JSON.stringify(items));
         }
-        //set reload to false when the state of the item's collection changes
-        setReload(false);
+        //set rreset to false when the state of the item's collection changes
+        setReset(false);
     }, [items])
 
-    //If user clicks reload button, a call is made to the API and refreshes the rankings of the items
+    //If user clicks reseet button, a call is made to the API and refreshes the rankings of the items
     useEffect(() => {
-        if (reload === true) {
+        if (reset === true) {
             getDataFromApi();
         }
-    }, [reload])
+    }, [reset])
 
     return (
 
         (items != null)?
             <section>
-                <Container className="flexContainer">
+                <Container className="flexContainerRank">
                     <RankingGrid
                         items={items}
                         imgArr={imgArr}
@@ -87,7 +87,7 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
                         allowDrop={allowDrop}
                         drop={drop}
                     />
-                    <button onClick={Reload} className="reload">Reset</button>
+                    <button onClick={Reset} className="reset">Reset</button>
                     <ItemCollection
                         items={items}
                         imgArr={imgArr}
