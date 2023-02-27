@@ -157,3 +157,11 @@ footer a,
     text-decoration: none;
     font-weight: bold;
 }
+
+p .alignLeft {
+    text-align: left;
+}
+
+.swal2-html-container {
+    text-align: left;
+}
