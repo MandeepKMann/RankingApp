@@ -80,7 +80,7 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
         Swal.fire({
             title: 'Instructions',
-            html: '<p class="alignLeft">1) Select either the Famous or Local Raccoons <br /> 2) Drag and drop the images of the Raccoons into the tiered rows <br /> 3) Each tier can only accept 4 images <br /> 4) Rankings can only be undone by resetting everything by clicking the Reset button</p>'
+            html: '1) Select either the Famous or Local Raccoons <br /> 2) Drag and drop the images of the Raccoons into the tiered rows <br /> 3) Each tier can only accept 4 images <br /> 4) Rankings can only be undone by resetting everything by clicking the Reset button'
         })
     }
 
