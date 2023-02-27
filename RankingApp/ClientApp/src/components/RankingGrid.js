@@ -22,6 +22,7 @@
                         <img
                             id={`item-${item.id}`}
                             src={imgArr.find(o => o.id === item.imageId)?.image}
+                            alt={imgArr.find(o => o.id === item.imageId)?.description}
                             draggable="true"
                             onDragStart={drag}
                         /> 

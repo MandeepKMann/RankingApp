@@ -4,6 +4,7 @@
             <img
                 id={`item-${item.id}`}
                 src={itemImgObj.image}
+                alt={itemImgObj.description }
                 style={{ cursor: "pointer" }}
                 draggable="true"
                 onDragStart={drag}
