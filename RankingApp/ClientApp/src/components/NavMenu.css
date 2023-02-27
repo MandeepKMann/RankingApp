@@ -33,4 +33,9 @@ html {
         padding-left: var(--bs-gutter-x, 0.75rem);
 
     }
+
+    .collapsing {
+        padding-right: var(--bs-gutter-x, 0.75rem);
+        padding-left: var(--bs-gutter-x, 0.75rem);
+    }
 }

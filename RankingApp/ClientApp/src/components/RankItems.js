@@ -3,13 +3,16 @@ import RankingGrid from './RankingGrid.js';
 import ItemCollection from './ItemCollection.js';
 import { Container } from 'reactstrap';
 import Swal from 'sweetalert2'
+import LoadingIcon from './LoadingIcon.js';
 
 const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
     const [reset, setReset] = useState(false);
+    const [resetLoading, setResetLoading] = useState(false);
 
     const Reset = () => {
         setReset(true);
+        setResetLoading(true);
     }
 
     //stores the id value of the item that is being dragged
@@ -67,6 +70,7 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
         }
         //set rreset to false when the state of the item's collection changes
         setReset(false);
+        setResetLoading(false);
     }, [items])
 
     //If user clicks reseet button, a call is made to the API and refreshes the rankings of the items
@@ -100,16 +104,18 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
                         <button onClick={InstructionsAlert}>Instructions</button>
                         <button onClick={Reset} className="reset">Reset</button>
                     </div>
+                    {resetLoading ? <LoadingIcon /> :
                     <ItemCollection
                         items={items}
                         imgArr={imgArr}
                         drag={drag}
                     />
+                }
                 </Container>
             </section>
             : <section>
-                <Container>
-                    <p>Loading...</p>
+                <Container className="flexContainerRank">
+                    <LoadingIcon />
                 </Container>
               </section>
         )

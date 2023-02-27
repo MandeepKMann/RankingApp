@@ -1,6 +1,5 @@
 /* Provide sufficient contrast against white background */
 
-
 header {
     height: 7vh;
     border-bottom: 2px solid black;
@@ -50,6 +49,12 @@ section {
     gap: 10px;
 }
 
+/* https://www.joshwcomeau.com/animation/css-transitions/ */
+.links a:hover,
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
 .links a,
 .buttons button {
     text-decoration: none;
@@ -57,6 +62,7 @@ section {
     padding: 10px;
     color: black;
     background-color: #FEFCF1;
+    transition: transform 250ms;
 }
 
 
@@ -161,4 +167,33 @@ footer a,
 
 .swal2-html-container {
     text-align: left;
+}
+
+/* https://codepen.io/petrey/pen/bpKqJv */
+.loadingIcon {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twist-up {
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .rankings {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .rankCell img {
+        height: 75%;
+    }
 }
