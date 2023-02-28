@@ -44,7 +44,6 @@ a.navbar-brand:focus {
 .nav-item:hover,
 .nav-item:focus {
     background-color: #C1BD74;
-    border-radius: 7px;
 }
 
 nav {
@@ -53,10 +52,10 @@ nav {
     border-bottom: 2px solid black;
 }
 
-nav .container {
-    padding-left: 0px;
-    padding-right: 0px;
-}
+    nav .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 
 html {
   font-size: 16px;
@@ -79,8 +78,8 @@ html {
     }
 
     nav .container {
-        background-color: white;
         padding: 0px;
+        background-color: #FCF7EB;
     }
 
     .collapse {

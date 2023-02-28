@@ -71,6 +71,7 @@ section {
 .buttons {
     display: flex;
     gap: 10px;
+    text-align: center;
 }
 
 /* https://www.joshwcomeau.com/animation/css-transitions/ */
@@ -227,6 +228,12 @@ footer a:focus,
     .rankings {
         width: 100%;
     }
+
+    .homeSection,
+    .devNotesSection {
+        background-position: 67% 70%;
+    }
+
 }
 
 @media (max-width: 550px) {
