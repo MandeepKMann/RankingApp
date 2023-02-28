@@ -10,11 +10,6 @@ h1 {
     text-align: center;
 }
 
-header {
-    height: 8vh;
-    border-bottom: 2px solid black;
-}
-
 section {
     min-height: 87vh;
     background-color: #FCF7EB;
@@ -243,5 +238,14 @@ footer a:focus,
 @media (max-width: 550px) {
     .rankCell img {
         height: 75%;
+    }
+}
+
+@media (max-width: 450px) {
+    .rankCell img {
+        height: 50%;
+    }
+    .links {
+        flex-direction: column;
     }
 }

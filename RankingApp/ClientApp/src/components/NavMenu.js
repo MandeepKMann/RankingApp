@@ -24,28 +24,28 @@ export class NavMenu extends Component {
 
     render() {
         return (
-        <header>
-            <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white mb-3" container light>
+            <header>
+                <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white mb-3" container light>
                     <NavbarBrand tag={Link} to="/"><img src={raccoonIcon} alt="a raccoon emoji"/> Raccoon Ranker</NavbarBrand>
-                <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-                    <ul className="navbar-nav flex-grow">
-                        <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/rank-famous">Famous Racoons</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/rank-local">Local Raccoons</NavLink>
+                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                    <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+                        <ul className="navbar-nav flex-grow">
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
                             </NavItem>
-                        <NavItem>
-                            <NavLink tag={Link} className="text-dark" to="/dev-notes">Dev Notes</NavLink>
-                        </NavItem>
-                    </ul>
-                </Collapse>
-            </Navbar>
-      </header>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/rank-famous">Famous Racoons</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/rank-local">Local Raccoons</NavLink>
+                                </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/dev-notes">Dev Notes</NavLink>
+                            </NavItem>
+                        </ul>
+                    </Collapse>
+                </Navbar>
+          </header>
     );
   }
 }

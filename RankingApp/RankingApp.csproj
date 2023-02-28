@@ -19,13 +19,24 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\fonts\NewFolder1\**" />
+    <Compile Remove="ClientApp\src\fonts\NewFolder\**" />
+    <Compile Remove="ClientApp\src\fonts\SimpleHandmade\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\fonts\NewFolder1\**" />
+    <Content Remove="ClientApp\src\fonts\NewFolder\**" />
+    <Content Remove="ClientApp\src\fonts\SimpleHandmade\**" />
+    <EmbeddedResource Remove="ClientApp\src\fonts\NewFolder1\**" />
+    <EmbeddedResource Remove="ClientApp\src\fonts\NewFolder\**" />
+    <EmbeddedResource Remove="ClientApp\src\fonts\SimpleHandmade\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\fonts\NewFolder1\**" />
+    <None Remove="ClientApp\src\fonts\NewFolder\**" />
+    <None Remove="ClientApp\src\fonts\SimpleHandmade\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\fonts\SimpleHandmade\" />
     <Folder Include="ClientApp\src\images\famousRaccoons\" />
   </ItemGroup>
 
