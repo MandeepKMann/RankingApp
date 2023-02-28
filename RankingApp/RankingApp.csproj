@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\fonts\SimpleHandmade\" />
     <Folder Include="ClientApp\src\images\famousRaccoons\" />
   </ItemGroup>
 

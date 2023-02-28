@@ -90,8 +90,8 @@ const RankItems = ({items, setItems, dataType, imgArr, localStorageKey}) => {
 
     return (
 
-        (items != null)?
-            <section>
+        (items != null) ?
+            <section className="raccoonSection">
                 <Container className="flexContainerRank">
                     <RankingGrid
                         items={items}
