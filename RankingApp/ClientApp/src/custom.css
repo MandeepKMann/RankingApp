@@ -28,6 +28,7 @@ section {
     gap: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: #FEFCF1;
 }
 
 .homeSection,
@@ -119,9 +120,11 @@ section {
 
 .unrankedCell img, .rankCell img {
     height: 100%;
+    border-radius: 7px;
 }
 
 .rankings {
+    font-family: CheeseSmile;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -163,7 +166,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.25px solid black;
+    border-left: 3px solid #FEFCF1;
+    border-right: 3px solid #FEFCF1;
 }
 
 .reset {
